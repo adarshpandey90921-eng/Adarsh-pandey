@@ -83,6 +83,41 @@
 
 /* Hero */
 header.hero{min-height:72vh;display:grid;align-items:center}
+    /* Hero background video */
+.hero{
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
+  opacity:0.35; /* adjust brightness */
+  pointer-events:none;
+}
+
+/* Dark overlay for readability */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.75)
+  );
+  z-index:-1;
+}
+
+/* Ensure hero content stays above video */
+.hero .wrap{
+  position:relative;
+  z-index:1;
+}
 .hero-grid{display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:center}
 .hero-title{font-weight:700;font-size:clamp(28px,5vw,44px);margin:0 0 12px}
 .hero-sub{color:var(--muted);margin:0 0 24px;font-size:clamp(14px,2.4vw,18px)}
@@ -146,6 +181,16 @@ a.icon-link{display:inline-flex;align-items:center;gap:8px;color:var(--muted);te
 </head>
 <body>
   <div class="bg-anim" aria-hidden></div>  <header class="hero">
+    <!-- Hero background video -->
+<video class="hero-video"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata">
+
+  <source src="hero-video.mp4" type="video/mp4">
+</video>
     <div class="wrap hero-grid">
       <div>
         <h1 class="hero-title">Adarsh – Designer, Visual Thinker, and Pixel Mechanic.</h1>
