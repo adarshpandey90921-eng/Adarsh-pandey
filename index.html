@@ -47,9 +47,16 @@
 @media (max-width:900px){
   .grid-3x2{grid-template-columns:repeat(2,1fr)}
 }
-@media (max-width:560px){
-  .grid-2x2,
-  .grid-3x2{grid-template-columns:1fr}
+    @media (max-width:560px){
+  /* 2×2 stays a grid on phones */
+  .grid-2x2{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  /* 3×2 becomes single-column for tall posters */
+  .grid-3x2{
+    grid-template-columns:1fr;
+  }
 }
     /* Reset + base */
     :root{
