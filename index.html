@@ -130,7 +130,33 @@ header.hero{min-height:72vh;display:grid;align-items:center}
 .hero-sub{color:var(--muted);margin:0 0 24px;font-size:clamp(14px,2.4vw,18px)}
 .cta-row{display:flex;gap:12px;align-items:center}
 
-/* SVG button style */
+
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bgimg {
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.bgimg picture,
+.bgimg img {
+  width: 100%;
+  height: 100%;
+}
+
+.bgimg img {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+} 
+    
+    
+    /* SVG button style */
 .btn{
   position:relative;
   display:inline-flex;
@@ -400,6 +426,24 @@ a.icon-link{display:inline-flex;align-items:center;gap:8px;color:var(--muted);te
         </div>
         <div class="meta"><a class="icon-link" href="#" data-case="3">View full case study</a><span class="muted">2023</span></div>
       </article>
+        <section class="bgimg">
+    <picture>
+      <!-- Desktop background image -->
+      <source
+        media="(min-width: 1024px)"
+        srcset="images/bg-desktop.jpg">
+
+      <!-- Tablet background image -->
+      <source
+        media="(min-width: 600px)"
+        srcset="images/bg-tablet.jpg">
+
+      <!-- Mobile background image -->
+      <img
+        src="images/bg-mobile.jpg"
+        alt="Background image">
+    </picture>
+        </section>
 
     </div>
     <!-- Image Grids Showcase -->
